@@ -3,12 +3,38 @@ package Byggpaket;
 public class Villa extends Bostäder {
     
     private Boolean bilplats;
+    
 
-    public Villa( int rum, int bostadsyta, int toalettAntal, int kök, int tomtyta, int pris, String namn, Boolean bilplats)
+    public Villa( int rum, int bostadsyta, int toalettAntal, int kök, int tomtyta,int pris, String namn, Boolean bilplats)
     {
-        super(rum, bostadsyta, toalettAntal, kök, tomtyta, pris, namn);
-        this.bilplats = true;
+        super(rum, bostadsyta, toalettAntal, kök, pris,  tomtyta, namn);
+
+         this.bilplats = true;
     }
+
+    public void setBilplats(Boolean bilplats)
+    {
+        if(bilplats != true || bilplats != false)
+        {
+            throw new IllegalArgumentException("Du har inte valt satn eller falskt om man har bilplats.");
+        }
+        else if(bilplats == true)
+        {
+            this.bilplats = true;
+        }
+         else if(bilplats == false)
+        {
+            this.bilplats = false;
+        }
+    }
+
+    
+
+
+    public Boolean getBilplats() {
+        return bilplats;
+    }
+
 
     
 

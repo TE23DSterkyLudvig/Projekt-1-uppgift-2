@@ -1,5 +1,5 @@
-package Byggpaket;
+//package Byggpaket;
 
-public class Lägenhetshus {
+//public class Lägenhetshus {
     
-}
+//}

@@ -6,11 +6,11 @@ public abstract class Bostäder
     protected int bostadsyta;
     protected int toalettAntal;
     protected int kök;
-    protected int tomtyta;
     protected int pris;
+    protected int tomtyta;
     protected String namn;  //alltså adressnamn
 
-    public Bostäder(int rum, int bostadsyta, int toalettAntal, int kök, int tomtyta, int pris, String namn)
+    public Bostäder(int rum, int bostadsyta, int toalettAntal, int kök, int pris, int tomtyta, String namn)
     {
 
         // kontrollerar alla variabler utifrån de krav som finns för alla bostäder
@@ -44,35 +44,100 @@ public abstract class Bostäder
             throw new IllegalArgumentException("Måste ha ett adressnamn");
         }
 
+        if(pris > 15000000 || pris < 2000000)
+        {
+            throw new IllegalArgumentException("pris är mellan 2 miljoner och 15 miljoner");
+        }
+
+        
+
         this.rum = rum;
         this.bostadsyta = bostadsyta;
         this.toalettAntal = toalettAntal;
         this.kök = kök;
         this.tomtyta = tomtyta;
-        this.pris = pris;
         this.namn = namn;
     }
     
     public void setBostadsyta(int bostadsyta) {
-       
+       if(bostadsyta > 230 || bostadsyta < 230)
+        {
+            throw new IllegalArgumentException("bostads yta måste vara imellan 170 och 230!");
+        }
+        this.bostadsyta = bostadsyta;
     }
     public void setKök(int kök) {
-       
+        if (kök != 1)
+        {
+            throw new IllegalArgumentException("Finns bara ett kök!");
+        }
+       this.kök = kök;
     }
     public void setNamn(String namn) {
        
+        if(namn == null || namn.trim().isEmpty())
+        {
+            throw new IllegalArgumentException("Måste ha ett adressnamn");
+        }
+        this.namn = namn;
     }
-    public void setPris(int pris) {
-      
-    }
+
     public void setRum(int rum) {
-     
+        if(rum > 7 || rum < 4)
+        {
+            throw new IllegalArgumentException("mellan 4 och 7 rum!");
+        }
+        this.rum = rum;
     }
     public void setToalettAntal(int toalettAntal) {
-       
+
+        if (toalettAntal > 2 || toalettAntal < 1)
+        {
+            throw new IllegalArgumentException("toalettantal måste vara mellan 1 och 2");
+        }
+       this.toalettAntal = toalettAntal;
     }
     public void setTomtyta(int tomtyta) {
       
+        if(tomtyta > 1000 || tomtyta < 400)
+        {
+            throw new IllegalArgumentException("Tomtyta måste vara melllan 400 och 1000 kvm!");
+        }
+
+        this.tomtyta = tomtyta;
+    }
+
+        public void setPris(int pris) 
+    {
+        if(pris > 15000000 || pris < 2000000)
+        {
+            throw new IllegalArgumentException("Pris för villa för inte överstiga 15 000 000 men inte understiga 2 000 000!");
+        }
+
+        this.pris = pris;
+    }
+
+
+    public int getBostadsyta() {
+        return bostadsyta;
+    }
+    public int getKök() {
+        return kök;
+    }
+    public String getNamn() {
+        return namn;
+    }
+    public int getRum() {
+        return rum;
+    }
+    public int getToalettAntal() {
+        return toalettAntal;
+    }
+    public int getTomtyta() {
+        return tomtyta;
+    }
+    public int getPris() {
+        return pris;
     }
 
 }
