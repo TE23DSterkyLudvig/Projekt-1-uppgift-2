@@ -44,9 +44,9 @@ public abstract class Bostäder
             throw new IllegalArgumentException("Måste ha ett adressnamn");
         }
 
-        if(pris > 15000000 || pris < 2000000)
+        if(pris > 15000000 || pris < 500000)
         {
-            throw new IllegalArgumentException("pris är mellan 2 miljoner och 15 miljoner");
+            throw new IllegalArgumentException("pris är mellan 500000 och 15 miljoner");
         }
 
         
@@ -109,9 +109,9 @@ public abstract class Bostäder
 
         public void setPris(int pris) 
     {
-        if(pris > 15000000 || pris < 2000000)
+        if(pris > 15000000 || pris < 500000)
         {
-            throw new IllegalArgumentException("Pris för villa för inte överstiga 15 000 000 men inte understiga 2 000 000!");
+            throw new IllegalArgumentException("Pris för villa för inte överstiga 15 000 000 men inte understiga 500 000!");
         }
 
         this.pris = pris;
