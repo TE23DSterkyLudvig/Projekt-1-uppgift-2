@@ -32,7 +32,7 @@ public class Villa extends Bostäder {
 
 
     public Boolean getBilplats() {
-        return bilplats;
+        return this.bilplats;
     }
 
 

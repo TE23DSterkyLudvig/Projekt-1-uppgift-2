@@ -119,25 +119,25 @@ public abstract class Bostäder
 
 
     public int getBostadsyta() {
-        return bostadsyta;
+        return this.bostadsyta;
     }
     public int getKök() {
-        return kök;
+        return this.kök;
     }
     public String getNamn() {
-        return namn;
+        return this.namn;
     }
     public int getRum() {
-        return rum;
+        return this.rum;
     }
     public int getToalettAntal() {
-        return toalettAntal;
+        return this.toalettAntal;
     }
     public int getTomtyta() {
-        return tomtyta;
+        return this.tomtyta;
     }
     public int getPris() {
-        return pris;
+        return this.pris;
     }
 
 }
