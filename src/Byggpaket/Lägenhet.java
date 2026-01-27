@@ -12,7 +12,8 @@ public class Lägenhet {
 
     public Lägenhet(int lägenhetsyta, int möbler, int balkong, int köksyta, int sängar)
     {
-        this.lägenhetsYta = gränsCheck(lägenhetsYta, 200, 80 );
+        
+        this.lägenhetsYta = gränsCheck(lägenhetsYta, 200, 80 ); 
         this.möbler = gränsCheck(möbler, 12, 4);
         this.balkong = gränsCheck(balkong, 2, 1);
         this.köksyta = gränsCheck(köksyta, 40, 20);
@@ -72,12 +73,22 @@ public class Lägenhet {
 
 
 
-    public int gränsCheck(int checkvärde, int övre, int undre)
+public static int gränsCheck(int checkvärde, int undre, int övre )
     {
-       if(checkvärde > övre || checkvärde < undre)
-        {
-            throw new IllegalArgumentException(checkvärde + " får inte vara större än " + övre + " eller mindre än " + undre);
+      while(true)
+        { 
+            if(checkvärde > övre || checkvärde < undre)
+            {
+               System.out.println(  " Värde får inte vara större än" + övre + " och inte mindre än" + undre);
+               continue;
+            }
+            else
+            {
+                break;
+            }
         }
+        
         return checkvärde;
     }
+
 }

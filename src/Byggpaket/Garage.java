@@ -7,7 +7,7 @@ public class Garage extends Bostäder implements Garagefunktioner  {
 
     public Garage(int bilplatsYta, int förrådsyta, int pris, String namn)
     {
-        if (bilplatsYta > 30 || bilplatsYta < 30)
+        if (bilplatsYta < 15 || bilplatsYta > 30)
         {
             throw new IllegalArgumentException("Inte större än 30 kvm men inte mindre än 15 kvm");
         }
@@ -25,7 +25,7 @@ public class Garage extends Bostäder implements Garagefunktioner  {
 
     public void setBilplatsYta( int bilplatsYta)
     {
-        if (bilplatsYta > 30 || bilplatsYta < 30)
+        if (bilplatsYta > 30 || bilplatsYta < 15)
         {
             throw new IllegalArgumentException("Inte större än 30 kvm men inte mindre än 15 kvm");
         } 

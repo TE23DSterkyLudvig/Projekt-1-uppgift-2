@@ -5,7 +5,7 @@ public class Villa extends Bostäder {
     private Boolean bilplats;
     
 
-    public Villa( int rum, int bostadsyta, int toalettAntal, int kök, int tomtyta,int pris, String namn, Boolean bilplats)
+    public Villa( int rum, int bostadsyta, int toalettAntal, int kök,int pris ,int tomtyta , String namn, Boolean bilplats)
     {
         super(rum, bostadsyta, toalettAntal, kök, pris,  tomtyta, namn);
 
