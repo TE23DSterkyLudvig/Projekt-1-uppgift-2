@@ -1,46 +1,29 @@
 package Byggpaket;
 
+import java.util.Scanner;
+
 public class Garage extends Bostäder implements Garagefunktioner  {
 
     private int bilplatsYta;
     private int förrådsyta;
+    Scanner tb = new Scanner(System.in);
 
     public Garage(int bilplatsYta, int förrådsyta, int pris, String namn)
     {
-        if (bilplatsYta < 15 || bilplatsYta > 30)
-        {
-            throw new IllegalArgumentException("Inte större än 30 kvm men inte mindre än 15 kvm");
-        }
-
-        if(förrådsyta > 20 || förrådsyta < 5 )
-        {
-            throw new IllegalArgumentException("inte större än 20 kvm och inte mindre än 5 kvm");
-        }
-
         super(0,0,0,0,pris,0,namn);
 
-        this.förrådsyta = förrådsyta;
-        this.bilplatsYta = bilplatsYta;
+        this.förrådsyta = gränsCheck(förrådsyta, 20, 5, tb);
+        this.bilplatsYta = gränsCheck(bilplatsYta, 30, 15, tb);
     }
 
     public void setBilplatsYta( int bilplatsYta)
     {
-        if (bilplatsYta > 30 || bilplatsYta < 15)
-        {
-            throw new IllegalArgumentException("Inte större än 30 kvm men inte mindre än 15 kvm");
-        } 
-        this.bilplatsYta = bilplatsYta;
+        this.bilplatsYta = gränsCheck(bilplatsYta, 30, 15, tb);
     }
 
     public void setFörrådsyta(int förrådsyta)
     {
-        
-        if(förrådsyta > 20 || förrådsyta < 5 )
-        {
-            throw new IllegalArgumentException("inte större än 20 kvm och inte mindre än 5 kvm");
-        }
-
-        this.förrådsyta = förrådsyta;
+        this.förrådsyta = gränsCheck(förrådsyta, 20, 5, tb);
     }
 
     
@@ -64,5 +47,34 @@ public class Garage extends Bostäder implements Garagefunktioner  {
     public void öppnaGaragedörr()
     {
         System.out.println("Garagedörr öppnas!");
+    }
+
+
+    public static int gränsCheck(int checkvärde, int övre ,int undre, Scanner tb )
+    {
+        while(true)
+        { 
+            try{
+            
+
+            if(checkvärde > övre || checkvärde < undre)
+            {
+               throw new IllegalArgumentException(  " Värde får inte vara större än" + övre + " och inte mindre än" + undre);
+            }
+            else
+            {
+                return checkvärde;
+            }
+
+            }
+            catch (Exception e) 
+            {
+                System.out.println("Ange nytt värde");
+                checkvärde = tb.nextInt();
+                continue;
+            }
+
+
+        }
     }
 }

@@ -1,8 +1,11 @@
 package Byggpaket;
 
+
 public class Villa extends Bostäder {
     
     private Boolean bilplats;
+
+
     
 
     public Villa( int rum, int bostadsyta, int toalettAntal, int kök,int pris ,int tomtyta , String namn, Boolean bilplats)

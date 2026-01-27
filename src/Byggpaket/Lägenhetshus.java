@@ -1,5 +1,6 @@
 package Byggpaket;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Lägenhetshus {
     private int förråd; //hur många förråd som finns
@@ -8,6 +9,8 @@ public class Lägenhetshus {
     private Lägenhet lägenhet;
     private ArrayList <Lägenhet> lägenheter;
 
+    Scanner tb = new Scanner(System.in);
+
     public Lägenhetshus(int förråd, int trappor, String namn ,Lägenhet lägenhet, ArrayList<Lägenhet> lägenheter)
     {
         if(namn == null|| namn.trim().isEmpty())
@@ -15,20 +18,20 @@ public class Lägenhetshus {
             throw new IllegalArgumentException("namn får inte vara tom eller mellanslag");
         }
         this.namn = namn;
-        this.förråd = gränsCheck(förråd, 20, 10);
-        this.trappor = gränsCheck(trappor,6, 1);
+        this.förråd = gränsCheck(förråd, 20, 10, tb);
+        this.trappor = gränsCheck(trappor,6, 1, tb);
         this.lägenhet = lägenhet;
         lägenheter.add(lägenhet);
 
     }
 
     public void setFörråd(int förråd) {
-        förråd = gränsCheck(förråd,20,10);
+        förråd = gränsCheck(förråd,20,10, tb);
         this.förråd = förråd;
     }
     public void setTrappor(int trappor)
     {
-        trappor = gränsCheck(trappor, 6,1);
+        trappor = gränsCheck(trappor, 6,1, tb);
     }
 
     public void setNamn(String namn)
@@ -58,21 +61,33 @@ public class Lägenhetshus {
 
 
 
-    public int gränsCheck(int checkvärde, int undre, int övre)
+    public static int gränsCheck(int checkvärde, int övre ,int undre, Scanner tb )
     {
-      while(true)
+        while(true)
         { 
+            try{
+            
+
             if(checkvärde > övre || checkvärde < undre)
             {
-               System.out.println(checkvärde + " får inte vara större än" + övre + " och inte mindre än" + undre);
+               throw new IllegalArgumentException(  " Värde får inte vara större än" + övre + " och inte mindre än" + undre);
+                
             }
             else
             {
-                break;
+                return checkvärde;
             }
+
+            }
+            catch (Exception e) 
+            {
+                System.out.println("Ange nytt värde");
+                checkvärde = tb.nextInt();
+                continue;
+            }
+
+
         }
-        
-        return checkvärde;
     }
 
     public int antalBilar()

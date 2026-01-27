@@ -2,15 +2,33 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import Byggpaket.*;
 
-public class App {
+public class App extends Mainfunktioner {
     public static void main(String[] args) throws Exception {
     
     Scanner tb = new Scanner(System.in); // tar in värden.
         
     Bostäder[] beställningar = new Bostäder[50]; // lagrar beställningar
+    Bostäder bostad ;
     int byggnadAntal = 0;
-    int menyval;
+    int menyval = 0;
     int byggnadsVal = 0;
+
+    int tomtyta;
+    int rum;
+    int bostadsyta;
+    int toalettAntal;
+    int kök;
+    int pris;
+    String namn;
+    Boolean bilplats;
+    int bilplatsYta;
+    int förrådsyta;
+    int lägenhetsYta;
+    int möbler;
+    int balkong;
+    int köksyta;
+    int sängar;
+    
     
 
     
@@ -20,36 +38,33 @@ public class App {
     {
         System.out.println("Välkommen till Luddes Fastighets och bostadsbyrå!");
 
-        while(true){
-            try 
-            {
+ //       while(true){
+ //           try 
+  //          {
                System.out.println
                (
-                "1. Lägg till beställning \n2. Ta bort beställning \n3. Lista beställningar \n4. Lista vinst \n5. avsluta program."
+                "1. Lägg till beställning \n2. Ta bort beställning \n3. Lista beställningar \n4. Lista vinst \n5. avsluta program \n Ange val i."
                ); 
 
                menyval = tb.nextInt();
-               tb.nextLine();
+               
+               menyval = gränsCheck(menyval, 5,1,tb);
 
-               menyval = gränsCheck(menyval, 5,1);
+               
+     //       } 
 
-               break;
-            } 
+          //  catch (Exception e) 
+          //  {
 
-            catch (Exception e) 
-            {
-                System.out.println("inte bokstäver eller mellanslag");
-                tb.nextLine();
-                continue;
-            }
-        }
+           // }
+            //}
 
         
         switch(menyval)
         {
             case 1:
             byggnadsVal = byggnadsVal(byggnadsVal, tb);
-
+            
 
             case 2:
 
@@ -77,9 +92,10 @@ public class App {
         {
            try 
            {
-            Thread.sleep(1000);
+            
             System.out.println("Vilken typ av fastighet vill du ha? \n1.Villa \n2.Radhus \n3.Garage \n4.Lägenhet \n Skriv det nummer som den eftertraktade bostaden har!");
             byggnadsVal = tb.nextInt();
+            tb.nextLine();
 
             if(byggnadsVal > 4 || byggnadsVal < 1)
             {
@@ -118,22 +134,35 @@ public class App {
         }
     }
     
-    public static int gränsCheck(int checkvärde, int undre, int övre )
+    public static int gränsCheck(int checkvärde, int övre ,int undre, Scanner tb )
     {
-      while(true)
+        while(true)
         { 
+            try{
+            
+
             if(checkvärde > övre || checkvärde < undre)
             {
-               System.out.println(  " Värde får inte vara större än" + övre + " och inte mindre än" + undre);
-               continue;
+               throw new IllegalArgumentException(  " Värde får inte vara större än" + övre + " och inte mindre än" + undre);
+                
             }
             else
             {
-                break;
+                return checkvärde;
             }
+
+            }
+            catch (Exception e) 
+            {
+                System.out.println("Ange nytt värde");
+                checkvärde = tb.nextInt();
+                continue;
+            }
+
+
         }
-        
-        return checkvärde;
     }
 
+
+    
 }

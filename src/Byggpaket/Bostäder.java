@@ -14,17 +14,17 @@ public abstract class Bostäder
     {
 
         // kontrollerar alla variabler utifrån de krav som finns för alla bostäder
-        if(rum < 7 || rum > 4)
+        if(rum > 7 || rum < 4)
         {
             throw new IllegalArgumentException("mellan 4 och 7 rum!");
         }
         
-        if(bostadsyta > 170 || bostadsyta < 230)
+        if(bostadsyta < 170 || bostadsyta > 230)
         {
             throw new IllegalArgumentException("bostads yta måste vara imellan 170 och 230!");
         }
 
-        if (toalettAntal < 2 || toalettAntal > 1)
+        if (toalettAntal > 2 || toalettAntal < 1)
         {
             throw new IllegalArgumentException("toalettantal måste vara mellan 1 och 2");
         }
@@ -34,7 +34,7 @@ public abstract class Bostäder
             throw new IllegalArgumentException("Finns bara ett kök!");
         }
 
-        if(tomtyta < 1000 || tomtyta > 400)
+        if(tomtyta > 1000 || tomtyta < 400)
         {
             throw new IllegalArgumentException("Tomtyta måste vara melllan 400 och 1000 kvm!");
         }
@@ -44,7 +44,7 @@ public abstract class Bostäder
             throw new IllegalArgumentException("Måste ha ett adressnamn");
         }
 
-        if(pris < 15000000 || pris > 500000)
+        if(pris > 15000000 || pris < 500000)
         {
             throw new IllegalArgumentException("pris är mellan 500000 och 15 miljoner");
         }
@@ -60,7 +60,7 @@ public abstract class Bostäder
     }
     
     public void setBostadsyta(int bostadsyta) {
-       if(bostadsyta < 230 || bostadsyta > 170)
+       if(bostadsyta > 230 || bostadsyta < 170)
         {
             throw new IllegalArgumentException("bostads yta måste vara imellan 170 och 230!");
         }
@@ -83,7 +83,7 @@ public abstract class Bostäder
     }
 
     public void setRum(int rum) {
-        if(rum < 7 || rum > 4)
+        if(rum > 7 || rum < 4)
         {
             throw new IllegalArgumentException("mellan 4 och 7 rum!");
         }
@@ -91,7 +91,7 @@ public abstract class Bostäder
     }
     public void setToalettAntal(int toalettAntal) {
 
-        if (toalettAntal < 2 || toalettAntal > 1)
+        if (toalettAntal > 2 || toalettAntal < 1)
         {
             throw new IllegalArgumentException("toalettantal måste vara mellan 1 och 2");
         }
@@ -99,7 +99,7 @@ public abstract class Bostäder
     }
     public void setTomtyta(int tomtyta) {
       
-        if(tomtyta < 1000 || tomtyta > 400)
+        if(tomtyta > 1000 || tomtyta < 400)
         {
             throw new IllegalArgumentException("Tomtyta måste vara melllan 400 och 1000 kvm!");
         }
@@ -109,7 +109,7 @@ public abstract class Bostäder
 
         public void setPris(int pris) 
     {
-        if(pris < 15000000 || pris > 500000)
+        if(pris > 15000000 || pris < 500000)
         {
             throw new IllegalArgumentException("Pris för villa för inte överstiga 15 000 000 men inte understiga 500 000!");
         }
