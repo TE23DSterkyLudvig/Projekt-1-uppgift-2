@@ -7,27 +7,32 @@ public class App extends Mainfunktioner {
     
     Scanner tb = new Scanner(System.in); // tar in värden.
         
-    Bostäder[] beställningar = new Bostäder[50]; // lagrar beställningar
-    Bostäder bostad ;
+    ArrayList <Bostäder> beställningar = new ArrayList<Bostäder>(); // lagrar beställningar
+    
     int byggnadAntal = 0;
     int menyval = 0;
     int byggnadsVal = 0;
+    Mainfunktioner mekanik = new Mainfunktioner();
 
-    int tomtyta;
-    int rum;
-    int bostadsyta;
-    int toalettAntal;
-    int kök;
-    int pris;
-    String namn;
-    Boolean bilplats;
-    int bilplatsYta;
-    int förrådsyta;
-    int lägenhetsYta;
-    int möbler;
-    int balkong;
-    int köksyta;
-    int sängar;
+
+
+    int tomtyta =0;
+    int rum = 0;
+    int bostadsyta = 0;
+    int toalettAntal = 0;
+    int kök = 0;
+    int pris = 0;
+    String namn = "";
+    Boolean bilplats = true;
+    int bilplatsYta = 0;
+    int förrådsyta = 0;
+    int lägenhetsYta = 0;
+    int möbler = 0;
+    int balkong = 0;
+    int köksyta = 0;
+    int sängar = 0;
+
+    
     
     
 
@@ -37,34 +42,26 @@ public class App extends Mainfunktioner {
     while(true)
     {
         System.out.println("Välkommen till Luddes Fastighets och bostadsbyrå!");
+        System.out.println
+        (
+            "1. Lägg till beställning \n2. Ta bort beställning \n3. Lista beställningar \n4. Lista vinst \n5. avsluta program \n Ange val i."
+        ); 
 
- //       while(true){
- //           try 
-  //          {
-               System.out.println
-               (
-                "1. Lägg till beställning \n2. Ta bort beställning \n3. Lista beställningar \n4. Lista vinst \n5. avsluta program \n Ange val i."
-               ); 
-
-               menyval = tb.nextInt();
+        menyval = tb.nextInt();
                
-               menyval = gränsCheck(menyval, 5,1,tb);
-
-               
-     //       } 
-
-          //  catch (Exception e) 
-          //  {
-
-           // }
-            //}
-
-        
+        menyval = gränsCheck(menyval, 5,1,tb);
+ 
         switch(menyval)
         {
             case 1:
             byggnadsVal = byggnadsVal(byggnadsVal, tb);
             
+            switch(byggnadsVal)
+            {
+                case 1:
+                Bostäder bostad = mekanik.villaKöp(rum,bostadsyta, toalettAntal, tomtyta, kök, pris, namn, bilplats, tb );
+                beställningar.add(bostad);
+            }
 
             case 2:
 

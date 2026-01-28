@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class Mainfunktioner 
 {
-    Scanner tb = new Scanner(System.in);
+    Scanner  tb = new Scanner(System.in);
 
-    public Bostäder villaKöp( Bostäder bostad, int rum, int bostadsyta, int toalettAntal, int tomtyta, int kök, int pris, String namn, Boolean bilplats)
+    public Bostäder villaKöp( int rum, int bostadsyta, int toalettAntal, int tomtyta, int kök, int pris, String namn, Boolean bilplats, Scanner tb)
     {
         System.out.println("vill köpa villa!");
         System.out.println("Ange Rum mellan 4 och 7");
@@ -62,9 +62,9 @@ public class Mainfunktioner
           }
         }
 
-        bostad = new Villa(rum, bostadsyta, toalettAntal, kök, pris, tomtyta, namn, bilplats);
+        Villa villa = new Villa(rum, bostadsyta, toalettAntal, kök, pris, tomtyta, namn, bilplats);
 
-        return bostad;
+        return villa;
 
     }
 
