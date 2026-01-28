@@ -2,7 +2,7 @@ package Byggpaket;
 
 import java.util.Scanner;
 
-public class Lägenhet {
+public class Lägenhet extends Bostäder {
     private int lägenhetsYta;
     private int möbler;
     private int balkong;
@@ -13,9 +13,9 @@ public class Lägenhet {
     Scanner tb = new Scanner(System.in);
     
 
-    public Lägenhet(int lägenhetsyta, int möbler, int balkong, int köksyta, int sängar)
+    public Lägenhet(int lägenhetsyta, int möbler, int balkong, int köksyta, int sängar, int pris, int rum)
     {
-        
+        super(rum, 0, 0, 0, pris, 0, "")  ;
         this.lägenhetsYta = gränsCheck(lägenhetsYta, 200, 80, tb); 
         this.möbler = gränsCheck(möbler, 12, 4, tb);
         this.balkong = gränsCheck(balkong, 2, 1, tb);
