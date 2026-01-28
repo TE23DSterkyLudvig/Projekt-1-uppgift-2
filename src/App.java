@@ -54,18 +54,22 @@ public class App extends Mainfunktioner {
         switch(menyval)
         {
             case 1:
-            byggnadsVal = byggnadsVal(byggnadsVal, tb);
+            byggnadsVal = byggnadsValet(byggnadsVal, tb);
             
             switch(byggnadsVal)
             {
                 case 1:
                 Bostäder bostad = mekanik.villaKöp(rum,bostadsyta, toalettAntal, tomtyta, kök, pris, namn, bilplats, tb );
                 beställningar.add(bostad);
+                System.out.println("Lagt till en villabeställning");
+                break;
             }
 
             case 2:
-
-
+                Bostäder bostad = mekanik.radhusKöp(rum,bostadsyta, toalettAntal, tomtyta, kök, pris, namn, tb );
+                beställningar.add(bostad);
+                System.out.println("Lagt till en radhusbeställning");
+                break;
             case 3:
 
 
@@ -83,7 +87,7 @@ public class App extends Mainfunktioner {
     }
 
     //Köparen får bestämma den bostad som passar bäst
-    public static int byggnadsVal(int byggnadsVal, Scanner tb)
+    public static int byggnadsValet(int byggnadsVal, Scanner tb)
     {
         while (true) 
         {
@@ -97,12 +101,13 @@ public class App extends Mainfunktioner {
             if(byggnadsVal > 4 || byggnadsVal < 1)
             {
                 System.out.println("Val får inte vara större än 4 men mindre än 1");
+                tb.nextLine();
                 continue;
             }
 
             else
             {
-                tb.nextLine();
+                
                 switch (byggnadsVal)
                 {
                     case 1:
