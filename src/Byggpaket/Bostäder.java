@@ -9,8 +9,9 @@ public abstract class Bostäder
     protected int pris;
     protected int tomtyta;
     protected String namn;  //alltså adressnamn
+    protected int id; //beställningsid
 
-    public Bostäder(int rum, int bostadsyta, int toalettAntal, int kök, int pris, int tomtyta, String namn)
+    public Bostäder(int id, int rum, int bostadsyta, int toalettAntal, int kök, int pris, int tomtyta, String namn)
     {
 
         // kontrollerar alla variabler utifrån de krav som finns för alla bostäder
@@ -57,6 +58,7 @@ public abstract class Bostäder
         this.kök = kök;
         this.tomtyta = tomtyta;
         this.namn = namn;
+        this.id = id;
     }
     
     public void setBostadsyta(int bostadsyta) {

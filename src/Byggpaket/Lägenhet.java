@@ -13,9 +13,9 @@ public class Lägenhet extends Bostäder {
     Scanner tb = new Scanner(System.in);
     
 
-    public Lägenhet(int lägenhetsyta, int möbler, int balkong, int köksyta, int sängar, int pris, int rum)
+    public Lägenhet(int id, int lägenhetsyta, int möbler, int balkong, int köksyta, int sängar, int pris, int rum)
     {
-        super(0, 0, 0, 0, 0, 0, "")  ; // vill inte ha något från bostäder
+        super(id, 0, 0, 0, 0, 0, 0, "")  ; // vill inte ha något från bostäder förutom id
         this.lägenhetsYta = gränsCheck(lägenhetsYta, 200, 80, tb); 
         this.möbler = gränsCheck(möbler, 12, 4, tb);
         this.balkong = gränsCheck(balkong, 2, 1, tb);
@@ -23,7 +23,7 @@ public class Lägenhet extends Bostäder {
         this.sängar = gränsCheck(sängar, 8, 2, tb);
         this.pris = gränsCheck(pris, 2000000, 450000, tb);
         this.rum = gränsCheck(rum, 5, 1, tb);
-    }//s
+    }
 
     public void setBalkong(int balkong) {
         balkong = gränsCheck(balkong, 2, 1,tb);

@@ -8,9 +8,9 @@ public class Villa extends Bostäder {
 
     
 
-    public Villa( int rum, int bostadsyta, int toalettAntal, int kök,int pris ,int tomtyta , String namn, Boolean bilplats)
+    public Villa(int id, int rum, int bostadsyta, int toalettAntal, int kök,int pris ,int tomtyta , String namn, Boolean bilplats)
     {
-        super(rum, bostadsyta, toalettAntal, kök, pris,  tomtyta, namn);
+        super( id, rum, bostadsyta, toalettAntal, kök, pris,  tomtyta, namn);
 
          this.bilplats = true;
     }

@@ -13,7 +13,7 @@ public class App extends Mainfunktioner {
     int menyval = 0;
     int byggnadsVal = 0;
     Mainfunktioner mekanik = new Mainfunktioner();
-
+    int id = 0;
 
 
     int tomtyta =0;
@@ -59,14 +59,14 @@ public class App extends Mainfunktioner {
             switch(byggnadsVal)
             {
                 case 1:
-                Bostäder bostad = mekanik.villaKöp(rum,bostadsyta, toalettAntal, tomtyta, kök, pris, namn, bilplats, tb );
+                Bostäder bostad = mekanik.villaKöp(id,rum,bostadsyta, toalettAntal, tomtyta, kök, pris, namn, bilplats, tb );
                 beställningar.add(bostad);
                 System.out.println("Lagt till en villabeställning");
                 break;
             }
 
             case 2:
-                Bostäder bostad = mekanik.radhusKöp(rum,bostadsyta, toalettAntal, tomtyta, kök, pris, namn, tb );
+                Bostäder bostad = mekanik.radhusKöp(id,rum,bostadsyta, toalettAntal, tomtyta, kök, pris, namn, tb );
                 beställningar.add(bostad);
                 System.out.println("Lagt till en radhusbeställning");
                 break;

@@ -5,14 +5,16 @@ public class Mainfunktioner
 {
     Scanner  tb = new Scanner(System.in);
 
-    public Bostäder villaKöp( int rum, int bostadsyta, int toalettAntal, int tomtyta, int kök, int pris, String namn, Boolean bilplats, Scanner tb)
+    public Bostäder villaKöp( int id, int rum, int bostadsyta, int toalettAntal, int tomtyta, int kök, int pris, String namn, Boolean bilplats, Scanner tb)
     {
         System.out.println("vill köpa villa!");
+        System.out.println("Ange id för beställning i siffor");
+        id = tb.nextInt();
+        id = gränsCheck(id, 999999999, 0, tb);
+
         System.out.println("Ange Rum mellan 4 och 7");
         rum = tb.nextInt();
         rum = gränsCheck(rum, 7, 4, tb);
-
-
         System.out.println("Ange bostadsyta mellan 170 och 230 kvm");
         bostadsyta = tb.nextInt();
         bostadsyta = gränsCheck(bostadsyta, 230, 170, tb);
@@ -61,19 +63,24 @@ public class Mainfunktioner
           }
         }
 
-        Villa villa = new Villa(rum, bostadsyta, toalettAntal, kök, pris, tomtyta, namn, bilplats);
+        Villa villa = new Villa(id,rum, bostadsyta, toalettAntal, kök, pris, tomtyta, namn, bilplats);
 
         return villa;
 
     }
 
 
-    public Bostäder radhusKöp (  int rum, int bostadsyta, int toalettAntal, int tomtyta, int kök, int pris, String namn, Scanner tb)
+    public Bostäder radhusKöp (int id,  int rum, int bostadsyta, int toalettAntal, int tomtyta, int kök, int pris, String namn, Scanner tb)
     {
-        System.out.println("vill köpa radhus!");
+        System.out.println("vill köpa radhus!"); 
+        System.out.println("Ange id för beställning i siffor");
+        id = tb.nextInt();
+        id = gränsCheck(id, 999999999, 0, tb);
+
         System.out.println("Ange Rum mellan 4 och 7");
         rum = tb.nextInt();
         rum = gränsCheck(rum, 7, 4, tb);
+
 
 
         System.out.println("Ange bostadsyta mellan 170 och 230 kvm");
@@ -124,7 +131,7 @@ public class Mainfunktioner
           }
         }
 
-        Radhus radhus = new Radhus(rum, bostadsyta, toalettAntal, kök, pris, tomtyta, namn);
+        Radhus radhus = new Radhus(id,rum, bostadsyta, toalettAntal, kök, pris, tomtyta, namn);
 
         return radhus;
     }

@@ -8,9 +8,9 @@ public class Garage extends Bostäder implements Garagefunktioner  {
     private int förrådsyta;
     Scanner tb = new Scanner(System.in);
 
-    public Garage(int bilplatsYta, int förrådsyta, int pris, String namn)
+    public Garage(int id,int bilplatsYta, int förrådsyta, int pris, String namn)
     {
-        super(0,0,0,0,pris,0,namn);
+        super(id, 0,0,0,0,pris,0,namn);
 
         this.förrådsyta = gränsCheck(förrådsyta, 20, 5, tb);
         this.bilplatsYta = gränsCheck(bilplatsYta, 30, 15, tb);
