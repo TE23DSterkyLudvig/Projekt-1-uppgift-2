@@ -15,15 +15,15 @@ public class Lägenhet extends Bostäder {
 
     public Lägenhet(int lägenhetsyta, int möbler, int balkong, int köksyta, int sängar, int pris, int rum)
     {
-        super(rum, 0, 0, 0, pris, 0, "")  ;
+        super(0, 0, 0, 0, 0, 0, "")  ; // vill inte ha något från bostäder
         this.lägenhetsYta = gränsCheck(lägenhetsYta, 200, 80, tb); 
         this.möbler = gränsCheck(möbler, 12, 4, tb);
         this.balkong = gränsCheck(balkong, 2, 1, tb);
         this.köksyta = gränsCheck(köksyta, 40, 20, tb);
         this.sängar = gränsCheck(sängar, 8, 2, tb);
-        this.pris = gränsCheck(pris, 450000, 2000000, tb);
+        this.pris = gränsCheck(pris, 2000000, 450000, tb);
         this.rum = gränsCheck(rum, 5, 1, tb);
-    }
+    }//s
 
     public void setBalkong(int balkong) {
         balkong = gränsCheck(balkong, 2, 1,tb);
