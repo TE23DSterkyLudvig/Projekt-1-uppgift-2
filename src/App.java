@@ -9,11 +9,11 @@ public class App extends Mainfunktioner {
         
     ArrayList <Bostäder> beställningar = new ArrayList<Bostäder>(); // lagrar beställningar
     
-    int byggnadAntal = 0;
+    
     int menyval = 0;
     int byggnadsVal = 0;
     Mainfunktioner mekanik = new Mainfunktioner();
-    int id = 0;
+     int id = 0;
 
 
     int tomtyta =0;
@@ -55,26 +55,57 @@ public class App extends Mainfunktioner {
         {
             case 1:
             byggnadsVal = byggnadsValet(byggnadsVal, tb);
-            
+            Bostäder bostad;
             switch(byggnadsVal)
             {
                 case 1:
-                Bostäder bostad = mekanik.villaKöp(id,rum,bostadsyta, toalettAntal, tomtyta, kök, pris, namn, bilplats, tb );
-                beställningar.add(bostad);
-                System.out.println("Lagt till en villabeställning");
-                break;
-            }
+                    bostad = mekanik.villaKöp(id,rum,bostadsyta, toalettAntal, tomtyta, kök, pris, namn, bilplats, tb );
+                    beställningar.add(bostad);
+                    System.out.println("Lagt till en villabeställning");
+                    break;
 
+                case 2:
+                    bostad = mekanik.radhusKöp(id,rum,bostadsyta, toalettAntal, tomtyta, kök, pris, namn, tb );
+                    beställningar.add(bostad);
+                    System.out.println("Lagt till en radhusbeställning");
+                    break;
+
+                case 3:
+                    bostad = mekanik.garageKöp(id, bilplatsYta, förrådsyta, pris, namn, tb);
+                    beställningar.add(bostad);
+                    System.out.println("Lagt till en garagebeställning");
+                    break;
+
+                case 4:
+                    bostad = mekanik.lägenhetsköp(id, lägenhetsYta, möbler, balkong, köksyta, sängar, pris, rum);
+                    beställningar.add(bostad);
+                    System.out.println("lagt till lägenhetsbeställning");
+                    break;
+            }
+            break;
             case 2:
-                Bostäder bostad = mekanik.radhusKöp(id,rum,bostadsyta, toalettAntal, tomtyta, kök, pris, namn, tb );
-                beställningar.add(bostad);
-                System.out.println("Lagt till en radhusbeställning");
+                System.out.println("Ange det id på den fastighet som ska tas bort");
+                id = tb.nextInt();
+                id = gränsCheck(id,999999999, 0, tb);
+
+                for (int i = 0; i < beställningar.size(); i++) 
+                {
+                    if(beställningar.get(i).getId() == id)
+                    {
+                        beställningar.remove(i);
+                        System.out.println("Beställning borttagen");
+                        break;
+                    }
+                }
                 break;
             case 3:
-
-
+                for (int i = 0; i < beställningar.size(); i++) 
+                {
+                    System.out.println(beställningar.get(i));
+                }
+                break;
             case 4:
-            
+                for
 
             case 5:
         }

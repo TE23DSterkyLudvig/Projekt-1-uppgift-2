@@ -2,6 +2,7 @@ package Byggpaket;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//lägenhetshuset där lägenheter finns
 public class Lägenhetshus {
     private int förråd; //hur många förråd som finns
     private int trappor;

@@ -1,5 +1,7 @@
 package Byggpaket;
 
+
+// Abstract klass som fastiheter utgår från
 public abstract class Bostäder 
 {
     protected int rum;
@@ -119,6 +121,21 @@ public abstract class Bostäder
         this.pris = pris;
     }
 
+    public void setId(int id)
+    {
+        if(id > 999999999 || id < 0)
+        {
+            throw new IllegalArgumentException("id måste vara mellan 999999999 och 0 ");
+        }
+
+        this.id = id;
+    }
+
+
+    public int getId()
+    {
+        return this.id;
+    }
 
     public int getBostadsyta() {
         return this.bostadsyta;
@@ -142,4 +159,9 @@ public abstract class Bostäder
         return this.pris;
     }
 
+    @Override
+    public String toString()
+    {
+        return"";
+    }
 }

@@ -1,8 +1,10 @@
 package Byggpaket;
 import java.util.Scanner;
 
+//Metoder för App.java som att till exempel köpa fastighet
 public class Mainfunktioner 
 {
+    public int id;
     Scanner  tb = new Scanner(System.in);
 
     public Bostäder villaKöp( int id, int rum, int bostadsyta, int toalettAntal, int tomtyta, int kök, int pris, String namn, Boolean bilplats, Scanner tb)
@@ -136,7 +138,95 @@ public class Mainfunktioner
         return radhus;
     }
 
+    
+    public Bostäder garageKöp( int id,int bilplatsYta, int förrådsyta, int pris, String namn, Scanner tb)
+    {   
+        System.out.println("Vill köpa garage!");
+        System.out.println("Ange id för beställning i siffor");
+        id = tb.nextInt();
+        id = gränsCheck(id, 999999999, 0, tb);
+
+        System.out.println("Ange yta för bilplatsyta i kvm mellan 30 och 15 kvm");
+        bilplatsYta = tb.nextInt();
+        bilplatsYta = gränsCheck(bilplatsYta, 30, 15, tb);
+
+        System.out.println("ange yta för förråd i kvm mellan 20 och 5 kvm");
+        förrådsyta = tb.nextInt();
+        förrådsyta = gränsCheck(förrådsyta, 20, 5, tb);
+
+        System.out.println("Ange pris mellan 500000 och 15000000");
+        pris = tb.nextInt();
+        pris = gränsCheck(pris, 15000000, 500000, tb);
+
+        tb.nextLine();
+        while (true) 
+        {
+        
+          try 
+          {
+            System.out.println("ange adressnamn");
+            namn = tb.nextLine(); 
+            if(namn == null || namn.trim().isEmpty())
+            {
+                throw new IllegalArgumentException("Inte tom eller bara mellanrum!");
+            }
+            else
+            {
+                break;
+            }
+          } 
+          catch (Exception e) 
+          {
+             continue;            
+          }
+        }
+
+        Garage garage = new Garage(id, bilplatsYta, förrådsyta, pris, namn);
+
+        return garage;
+    }
+
+
+    public Bostäder lägenhetsköp(int id, int lägenhetsyta, int möbler, int balkong, int köksyta, int sängar, int pris, int rum)
+    {
+        System.out.println("vill köpa lägenhet!"); 
+        System.out.println("Ange id för beställning i siffor");
+        id = tb.nextInt();
+        id = gränsCheck(id, 999999999, 0, tb);
+
+        System.out.println("Ange lägenhetsyta i kvm mellan ");
+        lägenhetsyta = tb.nextInt();
+        lägenhetsyta = gränsCheck(lägenhetsyta, 200, 80, tb); 
+
+        System.out.println("ange antal möbler mellan 12 och 4");
+        möbler = tb.nextInt();
+        möbler = gränsCheck(möbler, 12, 4, tb);
+
+        System.out.println("ange antal balkonger mellan 2 och 1 balkonger");
+        balkong = tb.nextInt();
+        balkong = gränsCheck(balkong, 2, 1, tb);
+
+        System.out.println("Ange köksyta i dm^3 mellan 40 och 20 dm^3");
+        köksyta = tb.nextInt();
+        köksyta = gränsCheck(köksyta, 40, 20, tb);
+
+        System.out.println("Ange antal sängar mellan 8 och 2 sängar");
+        sängar = tb.nextInt();
+        sängar = gränsCheck(sängar, 8, 2, tb);
+
+        System.out.println("Ange pris mellan 2000000 och 450000 kr");
+        pris = tb.nextInt();
+        pris = gränsCheck(pris, 2000000, 450000, tb);
+
+        Lägenhet lägenhet = new Lägenhet(id, lägenhetsyta, möbler, balkong, köksyta, sängar, pris, rum);
+
+        return lägenhet;
+    }
+    
+   
+   
     public static int gränsCheck(int checkvärde, int övre ,int undre, Scanner tb )
+
     {
         while(true)
         { 
@@ -163,4 +253,11 @@ public class Mainfunktioner
 
         }
     }
+
+    public int getId()
+    {
+        return this.id;
+    }
+
+    
 }

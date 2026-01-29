@@ -12,10 +12,10 @@ public class Lägenhet extends Bostäder {
     private int rum;
     Scanner tb = new Scanner(System.in);
     
-
+//Barnklass av Bostäder
     public Lägenhet(int id, int lägenhetsyta, int möbler, int balkong, int köksyta, int sängar, int pris, int rum)
     {
-        super(id, 0, 0, 0, 0, 0, 0, "")  ; // vill inte ha något från bostäder förutom id
+        super(id, 4, 170, 2, 1, 500000, 400, "s")  ; // vill inte ha något från bostäder förutom id
         this.lägenhetsYta = gränsCheck(lägenhetsYta, 200, 80, tb); 
         this.möbler = gränsCheck(möbler, 12, 4, tb);
         this.balkong = gränsCheck(balkong, 2, 1, tb);
@@ -105,4 +105,10 @@ public class Lägenhet extends Bostäder {
         }
     }
 
+
+    @Override
+    public String toString()
+    {
+        return "Lägenhet. \n1. id " + this.id + "\n2. lägenhetsyta " + this.lägenhetsYta + "\n3. möbler " + this.möbler + "\n4. balkonger " + this.balkong + "\n5. köksyta " + this.köksyta + "\n6. sängar " + this.sängar + "\n7. pris " + this.pris + "\n8. rum " + this.rum;
+    }
 }

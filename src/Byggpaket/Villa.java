@@ -1,6 +1,6 @@
 package Byggpaket;
 
-
+//Barnklass av Bostäder
 public class Villa extends Bostäder {
     
     private Boolean bilplats;
@@ -38,7 +38,11 @@ public class Villa extends Bostäder {
         return this.bilplats;
     }
 
-
+    @Override
+    public String toString()
+    {
+        return "Villa: \n1. id " + this.id +"\n2. rum " + this.rum + "\n3.bostadsyta " + this.bostadsyta + "\n4. toalettantal " + this.toalettAntal + "\n5. kök " + this.kök + "\n6. pris " + this.pris + "\n7. tomtyta " + this.tomtyta + "\n8. adressnamn " + this.namn + "\n9. bilplats " + this.bilplats;
+    }
     
 
 }

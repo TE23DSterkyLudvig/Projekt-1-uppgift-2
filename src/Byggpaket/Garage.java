@@ -1,7 +1,7 @@
 package Byggpaket;
 
 import java.util.Scanner;
-
+//Barnklass av Bostäder
 public class Garage extends Bostäder implements Garagefunktioner  {
 
     private int bilplatsYta;
@@ -10,7 +10,7 @@ public class Garage extends Bostäder implements Garagefunktioner  {
 
     public Garage(int id,int bilplatsYta, int förrådsyta, int pris, String namn)
     {
-        super(id, 0,0,0,0,pris,0,namn);
+        super(id, 4 ,170,2,1,pris,400,namn);
 
         this.förrådsyta = gränsCheck(förrådsyta, 20, 5, tb);
         this.bilplatsYta = gränsCheck(bilplatsYta, 30, 15, tb);
@@ -76,5 +76,12 @@ public class Garage extends Bostäder implements Garagefunktioner  {
 
 
         }
+    }
+
+
+    @Override
+    public String toString()
+    {
+        return "Garage: \n1. id " + this.id + "\n2. bilplatsyta " + this.bilplatsYta + "\n3. förrådsyta " + this.förrådsyta + "\np4. pris " + this.pris + "\n5. adressnamn" + this.namn ;
     }
 }
