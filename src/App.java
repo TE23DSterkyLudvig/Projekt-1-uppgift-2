@@ -84,6 +84,7 @@ public class App extends Mainfunktioner {
                     break;
             }
             break;
+            //
             case 2:
                 System.out.println("Ange det id på den fastighet som ska tas bort");
                 id = tb.nextInt();
@@ -112,7 +113,7 @@ public class App extends Mainfunktioner {
                     totalsumma += beställningar.get(i).getPris();
                 }
                 System.out.println(totalsumma);
-                totalsumma = 0; // nollställa om man vill göra om listning
+                 // nollställa om man vill göra om listning
                 break;
             case 5:
                 System.out.println("Stänger ner");
