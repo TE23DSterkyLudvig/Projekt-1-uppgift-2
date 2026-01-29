@@ -15,13 +15,13 @@ public class Lägenhet extends Bostäder {
 //Barnklass av Bostäder
     public Lägenhet(int id, int lägenhetsyta, int möbler, int balkong, int köksyta, int sängar, int pris, int rum)
     {
-        super(id, 4, 170, 2, 1, 500000, 400, "s")  ; // vill inte ha något från bostäder förutom id
+        super(id, 4, 170, 2, 1, pris, 400, "s")  ; // vill inte ha något från bostäder förutom id
         this.lägenhetsYta = gränsCheck(lägenhetsYta, 200, 80, tb); 
         this.möbler = gränsCheck(möbler, 12, 4, tb);
         this.balkong = gränsCheck(balkong, 2, 1, tb);
         this.köksyta = gränsCheck(köksyta, 40, 20, tb);
         this.sängar = gränsCheck(sängar, 8, 2, tb);
-        this.pris = gränsCheck(pris, 2000000, 450000, tb);
+        this.pris = gränsCheck(pris, 4000000, 100000, tb);
         this.rum = gränsCheck(rum, 5, 1, tb);
     }
 

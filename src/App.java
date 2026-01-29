@@ -13,7 +13,8 @@ public class App extends Mainfunktioner {
     int menyval = 0;
     int byggnadsVal = 0;
     Mainfunktioner mekanik = new Mainfunktioner();
-     int id = 0;
+    int id = 0;
+    int totalsumma = 0;
 
 
     int tomtyta =0;
@@ -105,14 +106,24 @@ public class App extends Mainfunktioner {
                 }
                 break;
             case 4:
-                for
 
+                for (int i = 0; i < beställningar.size() ; i++) 
+                {
+                    totalsumma += beställningar.get(i).getPris();
+                }
+                System.out.println(totalsumma);
+                totalsumma = 0; // nollställa om man vill göra om listning
+                break;
             case 5:
+                System.out.println("Stänger ner");
+                System.exit(0);
+                tb.close();
+                break;
         }
     }
 
 
-
+    
 
 
     }

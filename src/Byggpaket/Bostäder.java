@@ -17,43 +17,7 @@ public abstract class Bostäder
     {
 
         // kontrollerar alla variabler utifrån de krav som finns för alla bostäder
-        if(rum > 7 || rum < 4)
-        {
-            throw new IllegalArgumentException("mellan 4 och 7 rum!");
-        }
-        
-        if(bostadsyta < 170 || bostadsyta > 230)
-        {
-            throw new IllegalArgumentException("bostads yta måste vara imellan 170 och 230!");
-        }
-
-        if (toalettAntal > 2 || toalettAntal < 1)
-        {
-            throw new IllegalArgumentException("toalettantal måste vara mellan 1 och 2");
-        }
-
-        if (kök != 1)
-        {
-            throw new IllegalArgumentException("Finns bara ett kök!");
-        }
-
-        if(tomtyta > 1000 || tomtyta < 400)
-        {
-            throw new IllegalArgumentException("Tomtyta måste vara melllan 400 och 1000 kvm!");
-        }
-
-        if(namn == null || namn.trim().isEmpty())
-        {
-            throw new IllegalArgumentException("Måste ha ett adressnamn");
-        }
-
-        if(pris > 15000000 || pris < 500000)
-        {
-            throw new IllegalArgumentException("pris är mellan 500000 och 15 miljoner");
-        }
-
-        
-
+       
         this.rum = rum;
         this.bostadsyta = bostadsyta;
         this.toalettAntal = toalettAntal;
