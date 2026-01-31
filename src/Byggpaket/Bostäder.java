@@ -13,10 +13,11 @@ public abstract class Bostäder
     protected String namn;  //alltså adressnamn
     protected int id; //beställningsid
 
+    //konstruktor för bostäder
     public Bostäder(int id, int rum, int bostadsyta, int toalettAntal, int kök, int pris, int tomtyta, String namn)
     {
 
-
+        //Behöver inte check då jag gör en check i mainfuktioner då jag skapar en instans
 
         this.rum = rum;
         this.bostadsyta = bostadsyta;

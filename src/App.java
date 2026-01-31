@@ -15,6 +15,7 @@ public class App extends Mainfunktioner {
     Mainfunktioner mekanik = new Mainfunktioner();   // så att jag kan använda Mainmetoderna
     int id = 0;                                     // så att jag ska kunna ta bort bostäder.
     int totalsumma = 0;
+    
 
 
     int tomtyta =0;
