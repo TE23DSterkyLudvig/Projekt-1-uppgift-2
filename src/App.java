@@ -117,6 +117,7 @@ public class App extends Mainfunktioner {
                 }
                 System.out.println(totalsumma);      
                  // nollställa om man vill göra om listning
+                 totalsumma = 0;
                 break;
                 // stänger ned programmet.
             case 5:
