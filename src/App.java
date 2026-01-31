@@ -10,10 +10,10 @@ public class App extends Mainfunktioner {
     ArrayList <Bostäder> beställningar = new ArrayList<Bostäder>(); // lagrar beställningar
     
     
-    int menyval = 0;
-    int byggnadsVal = 0;
-    Mainfunktioner mekanik = new Mainfunktioner();
-    int id = 0;
+    int menyval = 0; // när man gör val i menyn
+    int byggnadsVal = 0;        // vilken fastighet
+    Mainfunktioner mekanik = new Mainfunktioner();   // så att jag kan använda Mainmetoderna
+    int id = 0;                                     // så att jag ska kunna ta bort bostäder.
     int totalsumma = 0;
 
 
@@ -23,7 +23,7 @@ public class App extends Mainfunktioner {
     int toalettAntal = 0;
     int kök = 0;
     int pris = 0;
-    String namn = "";
+    String namn = ""; // adressnamn
     Boolean bilplats = true;
     int bilplatsYta = 0;
     int förrådsyta = 0;
@@ -54,7 +54,8 @@ public class App extends Mainfunktioner {
  
         switch(menyval)
         {
-            case 1:
+            // om man väljer att köpa en fastighet
+            case 1: 
             byggnadsVal = byggnadsValet(byggnadsVal, tb);
             Bostäder bostad;
             switch(byggnadsVal)
@@ -84,7 +85,7 @@ public class App extends Mainfunktioner {
                     break;
             }
             break;
-            //
+            // Om man vill ta bort en bostad
             case 2:
                 System.out.println("Ange det id på den fastighet som ska tas bort");
                 id = tb.nextInt();
@@ -100,21 +101,24 @@ public class App extends Mainfunktioner {
                     }
                 }
                 break;
+                // Listar alla bostäder
             case 3:
                 for (int i = 0; i < beställningar.size(); i++) 
                 {
                     System.out.println(beställningar.get(i));
                 }
                 break;
+                // listar totalsumman
             case 4:
 
                 for (int i = 0; i < beställningar.size() ; i++) 
                 {
                     totalsumma += beställningar.get(i).getPris();
                 }
-                System.out.println(totalsumma);
+                System.out.println(totalsumma);      
                  // nollställa om man vill göra om listning
                 break;
+                // stänger ned programmet.
             case 5:
                 System.out.println("Stänger ner");
                 System.exit(0);
@@ -179,6 +183,7 @@ public class App extends Mainfunktioner {
         }
     }
     
+    // inskickade int-värden checkas med deras gränser
     public static int gränsCheck(int checkvärde, int övre ,int undre, Scanner tb )
     {
         while(true)

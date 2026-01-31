@@ -12,6 +12,7 @@ public class Lägenhetshus {
 
     Scanner tb = new Scanner(System.in);
 
+    //konstruktor för lägenhetshus
     public Lägenhetshus(int förråd, int trappor, String namn ,Lägenhet lägenhet, ArrayList<Lägenhet> lägenheter)
     {
         if(namn == null|| namn.trim().isEmpty())
@@ -25,7 +26,7 @@ public class Lägenhetshus {
         lägenheter.add(lägenhet);
 
     }
-
+    //Set metoder
     public void setFörråd(int förråd) {
         förråd = gränsCheck(förråd,20,10, tb);
         this.förråd = förråd;
@@ -44,7 +45,7 @@ public class Lägenhetshus {
         this.namn = namn;
     }
 
-
+    //get metoder
     public int getFörråd() {
         return this.förråd;
     }
@@ -61,7 +62,7 @@ public class Lägenhetshus {
 
 
 
-
+    // gränscheck
     public static int gränsCheck(int checkvärde, int övre ,int undre, Scanner tb )
     {
         while(true)
@@ -90,8 +91,8 @@ public class Lägenhetshus {
 
         }
     }
-
-    public int antalBilar()
+    // ger tillbaka antal lägenheter
+    public int antalLägenheter()
     {
         return lägenheter.size();
     }

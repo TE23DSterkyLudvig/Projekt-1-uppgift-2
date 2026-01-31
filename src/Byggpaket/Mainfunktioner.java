@@ -4,8 +4,9 @@ import java.util.Scanner;
 //Metoder för App.java som att till exempel köpa fastighet
 public class Mainfunktioner 
 {
-    public int id;
+
     Scanner  tb = new Scanner(System.in);
+    // om man köper villa
 
     public Bostäder villaKöp( int id, int rum, int bostadsyta, int toalettAntal, int tomtyta, int kök, int pris, String namn, Boolean bilplats, Scanner tb)
     {
@@ -71,7 +72,7 @@ public class Mainfunktioner
 
     }
 
-
+//om man köper radhus
     public Bostäder radhusKöp (int id,  int rum, int bostadsyta, int toalettAntal, int tomtyta, int kök, int pris, String namn, Scanner tb)
     {
         System.out.println("vill köpa radhus!"); 
@@ -138,7 +139,7 @@ public class Mainfunktioner
         return radhus;
     }
 
-    
+// om man köper garage
     public Bostäder garageKöp( int id,int bilplatsYta, int förrådsyta, int pris, String namn, Scanner tb)
     {   
         System.out.println("Vill köpa garage!");
@@ -186,7 +187,7 @@ public class Mainfunktioner
         return garage;
     }
 
-
+// om man köper lägenhet
     public Bostäder lägenhetsköp(int id, int lägenhetsyta, int möbler, int balkong, int köksyta, int sängar, int pris, int rum)
     {
         System.out.println("vill köpa lägenhet!"); 
@@ -224,7 +225,7 @@ public class Mainfunktioner
     }
     
    
-   
+   //gränscheck
     public static int gränsCheck(int checkvärde, int övre ,int undre, Scanner tb )
 
     {
@@ -253,11 +254,8 @@ public class Mainfunktioner
 
         }
     }
+    
 
-    public int getId()
-    {
-        return this.id;
-    }
 
     
 }

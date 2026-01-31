@@ -1,7 +1,7 @@
 package Byggpaket;
 
 import java.util.Scanner;
-
+//Barnklass av Bostäder för lägenheter
 public class Lägenhet extends Bostäder {
     private int lägenhetsYta;
     private int möbler;
@@ -12,7 +12,8 @@ public class Lägenhet extends Bostäder {
     private int rum;
     Scanner tb = new Scanner(System.in);
     
-//Barnklass av Bostäder
+
+    // konstruktor för lägenheter
     public Lägenhet(int id, int lägenhetsyta, int möbler, int balkong, int köksyta, int sängar, int pris, int rum)
     {
         super(id, 4, 170, 2, 1, pris, 400, "s")  ; // vill inte ha något från bostäder förutom id
@@ -24,7 +25,7 @@ public class Lägenhet extends Bostäder {
         this.pris = gränsCheck(pris, 4000000, 100000, tb);
         this.rum = gränsCheck(rum, 5, 1, tb);
     }
-
+    //set metoder
     public void setBalkong(int balkong) {
         balkong = gränsCheck(balkong, 2, 1,tb);
         this.balkong = balkong;
@@ -50,6 +51,7 @@ public class Lägenhet extends Bostäder {
         this.sängar = sängar;
     }
 
+    //get metoder
     public int getBalkong() {
         return this.balkong;
     }
@@ -75,7 +77,7 @@ public class Lägenhet extends Bostäder {
 
 
 
-
+    // gränscheck
     public static int gränsCheck(int checkvärde, int övre ,int undre, Scanner tb )
     {
         while(true)
@@ -105,7 +107,7 @@ public class Lägenhet extends Bostäder {
         }
     }
 
-
+    //skriver ut alla värden i instansen
     @Override
     public String toString()
     {

@@ -1,12 +1,12 @@
 package Byggpaket;
 
-//Barnklass av Bostäder
+//Barnklass av Bostäder för villor
 public class Villa extends Bostäder {
     
     private Boolean bilplats;
 
 
-    
+    // konstruktor för villa
 
     public Villa(int id, int rum, int bostadsyta, int toalettAntal, int kök,int pris ,int tomtyta , String namn, Boolean bilplats)
     {
@@ -14,7 +14,7 @@ public class Villa extends Bostäder {
 
          this.bilplats = true;
     }
-
+    //set metoder
     public void setBilplats(Boolean bilplats)
     {
         if(bilplats != true || bilplats != false)
@@ -33,11 +33,11 @@ public class Villa extends Bostäder {
 
     
 
-
+//get metod
     public Boolean getBilplats() {
         return this.bilplats;
     }
-
+    // skriver ut hela instansen
     @Override
     public String toString()
     {
