@@ -18,6 +18,7 @@ public class Mainfunktioner
         System.out.println("Ange Rum mellan 4 och 7");
         rum = tb.nextInt();
         rum = gränsCheck(rum, 7, 4, tb);
+
         System.out.println("Ange bostadsyta mellan 170 och 230 kvm");
         bostadsyta = tb.nextInt();
         bostadsyta = gränsCheck(bostadsyta, 230, 170, tb);
@@ -215,12 +216,16 @@ public class Mainfunktioner
         sängar = tb.nextInt();
         sängar = gränsCheck(sängar, 8, 2, tb);
 
-        System.out.println("Ange pris mellan 4000000 och 100000 kr");
+        System.out.println("Ange pris mellan 1000000  och 4000000  kr");
         pris = tb.nextInt();
-        pris = gränsCheck(pris, 4000000, 100000, tb);
+        pris = gränsCheck(pris, 4000000, 1000000, tb);
+
+        System.out.println("Ange rum mellan 1 och 5");
+        rum = tb.nextInt();
+        rum = gränsCheck(rum, 5, 1, tb);
 
         Lägenhet lägenhet = new Lägenhet(id, lägenhetsyta, möbler, balkong, köksyta, sängar, pris, rum);
-
+        
         return lägenhet;
     }
     

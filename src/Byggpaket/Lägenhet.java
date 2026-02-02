@@ -14,16 +14,17 @@ public class Lägenhet extends Bostäder {
     
 
     // konstruktor för lägenheter
-    public Lägenhet(int id, int lägenhetsyta, int möbler, int balkong, int köksyta, int sängar, int pris, int rum)
+    public Lägenhet(int id, int lägenhetsYta, int möbler, int balkong, int köksyta, int sängar, int pris, int rum)
     {
+        // behöver ingen check på dessa värden då jag gör kontroll i Mainfunktioner
         super(id, 4, 170, 2, 1, pris, 400, "s")  ; // vill inte ha något från bostäder förutom id
-        this.lägenhetsYta = gränsCheck(lägenhetsYta, 200, 80, tb); 
-        this.möbler = gränsCheck(möbler, 12, 4, tb);
-        this.balkong = gränsCheck(balkong, 2, 1, tb);
-        this.köksyta = gränsCheck(köksyta, 40, 20, tb);
-        this.sängar = gränsCheck(sängar, 8, 2, tb);
-        this.pris = gränsCheck(pris, 4000000, 100000, tb);
-        this.rum = gränsCheck(rum, 5, 1, tb);
+        this.lägenhetsYta = lägenhetsYta ; 
+        this.möbler = möbler; 
+        this.balkong = balkong; 
+        this.köksyta = köksyta;
+        this.sängar = sängar;
+        this.pris = pris;
+        this.rum = rum; 
     }
     //set metoder
     public void setBalkong(int balkong) {
@@ -43,7 +44,7 @@ public class Lägenhet extends Bostäder {
         this.möbler = möbler;
     }
     public void setPris(int pris) {
-        pris = gränsCheck(pris, 450000, 2000000, tb);
+        pris = gränsCheck(pris, 4000000, 1000000, tb);
         this.pris = pris;
     }
     public void setSängar(int sängar) {
@@ -111,6 +112,6 @@ public class Lägenhet extends Bostäder {
     @Override
     public String toString()
     {
-        return "Lägenhet. \n1. id " + this.id + "\n2. lägenhetsyta " + this.lägenhetsYta + "\n3. möbler " + this.möbler + "\n4. balkonger " + this.balkong + "\n5. köksyta " + this.köksyta + "\n6. sängar " + this.sängar + "\n7. pris " + this.pris + "\n8. rum " + this.rum;
+        return "Lägenhet. \n1. id " + this.id + "\n2. lägenhetsyta " + this.lägenhetsYta + " kvm\n3. möbler " + this.möbler + " stycken\n4. balkonger " + this.balkong + " balkonger\n5. köksyta " + this.köksyta + " dm^3\n6. sängar " + this.sängar + " sängar\n7. pris " + this.pris + " kr\n8. rum " + this.rum + " rum";
     }
 }

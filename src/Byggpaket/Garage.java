@@ -13,9 +13,9 @@ public class Garage extends Bostäder implements Garagefunktioner  {
     public Garage(int id,int bilplatsYta, int förrådsyta, int pris, String namn)
     {
         super(id, 4 ,170,1,1,pris,400,namn);
-
-        this.förrådsyta = gränsCheck(förrådsyta, 20, 5, tb);
-        this.bilplatsYta = gränsCheck(bilplatsYta, 30, 15, tb);
+        // behöver ingen check på dessa värden då jag gör kontroll i Mainfunktioner
+        this.förrådsyta = förrådsyta;
+        this.bilplatsYta = bilplatsYta;
     }
 
     // set metoder
@@ -85,6 +85,6 @@ public class Garage extends Bostäder implements Garagefunktioner  {
     @Override
     public String toString()
     {
-        return "Garage: \n1. id " + this.id + "\n2. bilplatsyta " + this.bilplatsYta + "\n3. förrådsyta " + this.förrådsyta + "\n4. pris  " + getPris() + "\n5. adressnamn " + this.namn ;
+        return "Garage: \n1. id " + this.id + "\n2. bilplatsyta " + this.bilplatsYta + " kvm\n3. förrådsyta " + this.förrådsyta + " kvm\n4. pris  " + getPris() + " kr\n5. adressnamn " + this.namn ;
     }
 }

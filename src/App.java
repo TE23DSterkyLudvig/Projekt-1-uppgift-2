@@ -116,7 +116,7 @@ public class App extends Mainfunktioner {
                 {
                     totalsumma += beställningar.get(i).getPris();
                 }
-                System.out.println(totalsumma);      
+                System.out.println(totalsumma + " kr");      
                  // nollställa om man vill göra om listning
                  totalsumma = 0;
                 break;

@@ -12,6 +12,6 @@ public class Radhus extends Bostäder {
     @Override
     public String toString()
     {
-        return "Radhus: \n1. id " + this.id +"\n2. rum " + this.rum + "\n3.bostadsyta " + this.bostadsyta + "\n4. toalettantal " + this.toalettAntal + "\n5. kök " + this.kök + "\n6. pris " + this.pris + "\n7. tomtyta " + this.tomtyta + "\n8. adressnamn " + this.namn ;
+        return "Radhus: \n1. id " + this.id +"\n2. rum " + this.rum + " rum\n3.bostadsyta " + this.bostadsyta + " kvm\n4. toalettantal " + this.toalettAntal + " stycken\n5. kök " + this.kök + " kök\n6. pris " + this.pris + " kr\n7. tomtyta " + this.tomtyta + " kvm\n8. adressnamn " + this.namn ;
     }
 }   
